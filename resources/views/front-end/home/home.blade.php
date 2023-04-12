@@ -1745,7 +1745,7 @@
                                     <div class="single_product">
                                         <div class="product_thumb">
                                             <a class="primary_img" href="product-details.html"><img src="{{ asset($product->main_image) }}" alt=""></a>
-                                            <a class="secondary_img" href="product-details.html"><img src="{{ asset($product->main_image) }}" alt=""></a>
+                                            <a class="secondary_img" href="product-details.html"><img src="{{ asset($product->secondary_image) }}" alt=""></a>
                                             <div class="quick_button">
                                                 <a href="#" data-toggle="modal" data-target="#modal_box" data-placement="top" data-original-title="quick view"> quick view</a>
                                             </div>
@@ -1757,8 +1757,12 @@
                                             </div>
                                             <h3><a href="product-details.html">{{ $product->product_name }}</a></h3>
                                             <div class="price_box">
-                                                <span class="old_price">{{ $product->price }}</span>
-                                                <span class="current_price">{{ $product->dis_price }}</span>
+                                               @if($product->dis_amount>0) 
+                                               <span class="old_price">{{ $product->price }}</span>
+                                               <span class="current_price">{{ $product->dis_price }}</span>
+                                               @else
+                                               <span class="current_price">{{ $product->price }}</span>
+                                                @endif
                                             </div>
                                             <div class="product_hover">
                                                 <div class="product_ratings">
