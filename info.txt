@@ -1,0 +1,6 @@
+composer i
+npm i
+npm run build
+php artisan key:generate
+php artisan session:table
+php artisan migrate
