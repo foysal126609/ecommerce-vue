@@ -13,7 +13,7 @@ class Product extends Model
 {
     use HasFactory;
 
-    private static $product,$productId,$productSubImage,$file,$files,$imageNewName,$imageDirectory,$imgUrl;
+    private static $product,$productId,$productSubImage,$file,$files,$image,$imageNewName,$imageDirectory,$imgUrl;
     public static  function saveProduct($request){
         self::$product = new Product();
         self::$product->category_id =$request->category_id;
@@ -25,11 +25,27 @@ class Product extends Model
         self::$product->price =$request->price;
         self::$product->dis_amount =$request->dis_amount;
         self::$product->dis_price =$request->dis_price;
-        self::$product->main_image =$request->main_image;
-        self::$product->secondary_image =$request->secondary_image;
+        self::$product->main_image =self::saveMainImage($request);
+        self::$product->secondary_image =self::saveSecondaryImage($request);
         self::$product->save();
         self::$productId=self::$product->id;
         return self::$productId;
+    }
+    private static function saveMainImage($request){
+        self::$image = $request->file('main_image');
+        self::$imageNewName = $request->product_name.'-'.rand().'.'.self::$image->extension();
+        self::$imageDirectory = 'adminAssets/upload-image/main-image/';
+        self::$imgUrl = self::$imageDirectory.self::$imageNewName;
+        self::$image->move(self::$imageDirectory,self::$imageNewName);
+        return self::$imgUrl;
+    }
+    private static function saveSecondaryImage($request){
+        self::$image = $request->file('secondary_image');
+        self::$imageNewName = $request->product_name.'-'.rand().'.'.self::$image->extension();
+        self::$imageDirectory = 'adminAssets/upload-image/secondary-image/';
+        self::$imgUrl = self::$imageDirectory.self::$imageNewName;
+        self::$image->move(self::$imageDirectory,self::$imageNewName);
+        return self::$imgUrl;
     }
 
     public static function uploadImage($request,$productId){
