@@ -91,18 +91,32 @@
                                             <label class="form-label">Product code</label>
                                             <input type="text" class="form-control" name="product_code">
                                         </div>
+
                                         <div class="col-12">
                                             <label class="form-label">Product Price</label>
-                                            <input type="number" class="form-control" name="price">
+                                            <input type="number" class="form-control" id="price" name="price">
                                         </div>
+
                                         <div class="col-12">
-                                            <label class="form-label">Product Discount amount</label>
-                                            <input type="number" class="form-control" name="dis_amount">
+                                            <label class="form-label">Discount</label>
+                                            <input type="radio" class="fixed" name="discount"> Fixed
+                                            <input type="radio" class="percentage" name="discount"> percentage
                                         </div>
+
+                                        <div class="col-12" id="show">
+                                            <label class="form-label">Product Discount amount</label>
+                                            <input type="number" class="form-control" id="disAmount" onkeyup="discountAmount()" name="dis_amount">
+                                        </div>
+                                        <div class="col-12" id="percentageField">
+                                            <label class="form-label">Product Discount amount</label>
+                                            <input type="number" class="form-control" id="disAmountPer" onkeyup="discountPercentage()" name="dis_amount">
+                                        </div>
+
                                         <div class="col-12">
                                             <label class="form-label">Product Discount Price</label>
-                                            <input type="number" class="form-control" name="dis_price">
+                                            <input type="number" class="form-control" id="disPrice" name="dis_price" readonly>
                                         </div>
+
                                         <div class="col-12">
                                             <label class="form-label">Product Main Image</label>
                                             <input type="file" class="form-control" name="main_image">
