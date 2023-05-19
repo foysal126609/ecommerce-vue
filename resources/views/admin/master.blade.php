@@ -111,16 +111,19 @@
     })
 </script>
 <script>
+
     function discountAmount() {
-        var price =document.getElementById('price').value;
-        var disAmount =document.getElementById('disAmount').value;
+        var price = document.getElementById('price').value;
+        var disAmount = document.getElementById('disAmount').value;
         document.getElementById('disPrice').value=price-disAmount;
     }
+
     function discountPercentage() {
         var price = document.getElementById('price').value;
         var disAmountPer = document.getElementById('disAmountPer').value;
         document.getElementById('disPrice').value=price-price*disAmountPer/100;
     }
+
 </script>
 
 </body>

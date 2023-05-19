@@ -107,6 +107,7 @@
                                             <label class="form-label">Product Discount amount</label>
                                             <input type="number" class="form-control" id="disAmount" onkeyup="discountAmount()" name="dis_amount">
                                         </div>
+
                                         <div class="col-12" id="percentageField">
                                             <label class="form-label">Product Discount amount</label>
                                             <input type="number" class="form-control" id="disAmountPer" onkeyup="discountPercentage()" name="dis_amount">
@@ -121,10 +122,12 @@
                                             <label class="form-label">Product Main Image</label>
                                             <input type="file" class="form-control" name="main_image">
                                         </div>
+
                                         <div class="col-12">
                                             <label class="form-label">Product secondary Image</label>
                                             <input type="file" class="form-control" name="secondary_image">
                                         </div>
+
                                         <div class="col-12">
                                             <label class="form-label">Product sub Image</label>
                                             <input type="file" class="form-control" name="sub_image[]" multiple="">
