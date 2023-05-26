@@ -11,6 +11,7 @@ Use App\Http\Controllers\SizeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,9 @@ Route::get('/details/{id}',[HomeController::class,'productDetails'])->name('deta
 Route::post('/add-to-cart',[CartController::class,'addToCart'])->name('add-to-cart');
 Route::get('/cart',[CartController::class,'showCart'])->name('cart');
 Route::get('/cart-delete/{id}',[CartController::class,'cartDelete'])->name('cart-delete');
+Route::post('/cart-update',[CartController::class,'cartUpdate'])->name('cart-update');
+
+Route::get('/checkout',[CheckoutController::class,'checkout'])->name('checkout')->middleware('checkoutMiddleware');
 
 
 

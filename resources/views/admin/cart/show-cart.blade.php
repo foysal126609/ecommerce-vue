@@ -32,7 +32,15 @@
         <tr style="color: #fff">
             <td>{{ $product->id }}</td>
             <td>{{ $product->name }}</td>
-            <td>{{ $product->qty }}</td>
+            <td>
+                <form action="{{ route('cart-update') }}" method="post">
+                    @csrf
+                    <input type="text" name="qty" value="{{ $product->qty }}">
+                    <input type="hidden" name="rowId" value="{{ $product->rowId }}">
+                    <input type="submit" value="update">
+                </form>
+
+            </td>
             <td>{{ $product->price }}</td>
             <td>{{ $product->qty*$product->price }}</td>
             <td>
@@ -41,6 +49,35 @@
         </tr>
             @endforeach
     </table>
+
+  <div class="row">
+      <div class="col-md-4 offset-md-4">
+          <table class="table table-bordered table-striped" >
+              <tr style="color: #fff">
+                  <th>sub total </th>
+                  <td>{{ Cart::subtotal() }} </td>
+              </tr>
+              <tr style="color: #fff">
+                  <th>shipping charge </th>
+                  <td>30</td>
+              </tr>
+              <tr style="color: #fff">
+                  <th> total </th>
+                  <td>
+                      {{ Cart::subtotal()+30 }}
+                  </td>
+              </tr>
+              <tr style="color: #fff">
+                  <th></th>
+                  <td>
+                      <a href="{{ route('checkout') }}"  class="btn btn-success">checkout</a>
+                  </td>
+              </tr>
+          </table>
+      </div>
+  </div>
+
+
 
 
 @endsection

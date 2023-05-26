@@ -7,14 +7,14 @@
     01. header css here
     02. slider area css here
     03. product section css here
-    04. banner section css here 
+    04. banner section css here
     05. blog area css here
     06. newsletter area css here
     07. footer area css here
     08. shop page css here
-    09. error page css heer 
+    09. error page css heer
     10. about page css here
-    11. blog page css here 
+    11. blog page css here
     12. blog details css here
     13. cart page css here
     14. checkout page css here
@@ -153,7 +153,7 @@ ul {
   padding: 0;
 }
 
-/*-- 
+/*--
     - Common Classes
 -----------------------------------------*/
 .fix {
@@ -192,7 +192,7 @@ ul {
   margin: 0;
 }
 
-/*-- 
+/*--
     - Background color
 -----------------------------------------*/
 .bg-white {
@@ -238,10 +238,10 @@ ul {
   height: 100%;
 }
 
-/*-- 
+/*--
     - color
 -----------------------------------------*/
-/*-- 
+/*--
     - Input Placeholder
 -----------------------------------------*/
 input:-moz-placeholder, textarea:-moz-placeholder {
@@ -264,8 +264,8 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 
-/*-- 
-    Scroll Up 
+/*--
+    Scroll Up
 -----------------------------------------*/
 #scrollUp {
   background: #212121 none repeat scroll 0 0;
@@ -292,7 +292,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   animation-iteration-count: infinite;
 }
 
-/*-- 
+/*--
     - Main Wrapper
 -----------------------------------------*/
 .main-wrapper.header-transparent {
@@ -300,7 +300,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   margin: 0 !important;
 }
 
-/*-- 
+/*--
     - Section Padding
 -------------------------------------*/
 .section-ptb {
@@ -8629,7 +8629,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   height: 40px;
   width: 100%;
   padding: 0 20px;
-  color: #5a5a5a;
+  color: #fff !important;
 }
 .checkout_form .nice-select {
   width: 100%;
@@ -8751,7 +8751,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   border-bottom: 1px solid #ddd;
 }
 .order_table table tfoot tr th {
-  color: #242424;
+  color: #fff;
   font-family: "Playfair Display", serif;
   min-width: 50%;
   text-align: center;
@@ -9231,7 +9231,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 }
 .table-responsive table tbody tr td {
   border-right: 1px solid #ebebeb;
-  color: #212121;
+  color: #fff !important;
   font-weight: 500;
   text-transform: capitalize;
   font-size: 14px;

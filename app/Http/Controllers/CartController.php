@@ -29,4 +29,11 @@ class CartController extends Controller
         Cart::remove($id);
         return redirect('/cart');
     }
+    public function cartUpdate(Request $request){
+        Cart::update(
+            $request->rowId,
+            $request->qty
+        );
+        return redirect('/cart');
+    }
 }
