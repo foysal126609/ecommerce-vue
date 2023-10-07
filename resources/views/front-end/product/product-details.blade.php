@@ -12,10 +12,57 @@
 
 @endsection
 @section('style')
-
+<style>
+    .color-box {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+	.color-box:hover {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    
+    .selected {
+      border: 1px solid black;
+    }
+    
+    #box1 {
+      background-color: #ff0000;
+    }
+    
+    #box2 {
+      background-color: #00ff00;
+    }
+    
+    #box3 {
+      background-color: #0000ff;
+    }
+	
+  </style>
 @endsection
 @section('script')
-
+<script>
+    function handleBoxClick(color) {
+      // Remove the 'selected' class from all color boxes
+      var boxes = document.getElementsByClassName('color-box');
+      for (var i = 0; i < boxes.length; i++) {
+        boxes[i].classList.remove('selected');
+      }
+      
+      // Add the 'selected' class to the clicked color box
+      var selectedBox = document.getElementById(color);
+      selectedBox.classList.add('selected');
+      
+      console.log('Selected color:', color);
+      // You can perform any desired action here with the selected color
+    }
+  </script>
 @endsection
 
 @section('content')
@@ -71,7 +118,7 @@
                     <div class="product_d_right">
 {{--                        <form action="#">--}}
 
-                            <h1>Donec eu furniture</h1>
+                            <h1 style="color:#fff;">{{  $products->product_name }}</h1>
                             <div class="product_nav">
                                 <ul>
                                     <li class="prev"><a href="#"><i class="fa fa-angle-left"></i></a></li>
@@ -89,13 +136,26 @@
                                 </ul>
                             </div>
                             <div class="product_price">
-                                <span class="old_price">{{  $products->price }}</span>
-                                <span class="current_price">{{  $products->dis_price }}</span>
+                                <span class="old_price">{{  $products->price }} BDT</span>
+                                <span class="current_price">{{  $products->dis_price }}  BDT</span>
                             </div>
 
                             <div class="product_price">
-                                <span class="old_price">color: {{  $products->price }} </span>
-                                <span class="current_price">size: {{  $products->dis_price }} </span>
+                                <span class="current_price">color:<br>  
+                                    <span class="color-box" id="box1" onclick="handleBoxClick('box1')"></span>
+                                    <span class="color-box" id="box2" onclick="handleBoxClick('box2')"></span>
+                                    <span class="color-box" id="box3" onclick="handleBoxClick('box3')"></span>
+                                </span>
+                                <br>
+                                <span class="current_price">size: 
+                                    <select name="size_id" id="SizeID" class="form-control col-sm-3">
+                                        <option value="">S</option>
+                                        <option value="">M</option>
+                                        <option value="">L</option>
+                                        <option value="">XL</option>
+                                        <option value="">XXL</option>
+                                    </select>
+                                </span>
                             </div>
 
                             <div class="product_desc">

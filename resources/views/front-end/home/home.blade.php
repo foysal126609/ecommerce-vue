@@ -1744,8 +1744,8 @@
                                 <div class="custom-col-5">
                                     <div class="single_product">
                                         <div class="product_thumb">
-                                            <a class="primary_img" href="product-details.html"><img src="{{ asset($product->main_image) }}" alt=""></a>
-                                            <a class="secondary_img" href="product-details.html"><img src="{{ asset($product->secondary_image) }}" alt=""></a>
+                                            <a class="primary_img" href="{{ route('details',['id'=>$product->id]) }}"><img src="{{ asset($product->main_image) }}" alt=""></a>
+                                            <a class="secondary_img" href="{{ route('details',['id'=>$product->id]) }}"><img src="{{ asset($product->secondary_image) }}" alt=""></a>
                                             <div class="quick_button">
                                                 <a href="#" data-toggle="modal" data-target="#modal_box" data-placement="top" data-original-title="quick view"> quick view</a>
                                             </div>
